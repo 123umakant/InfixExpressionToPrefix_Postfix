@@ -48,6 +48,7 @@ public class InfixToPrefix {
         for (int i=input.length-1;i>=0;i--){
             reverseInput[index]=input[i];
             index++;
+
         }
 
         List<String> output = infixToPN(reverseInput);
@@ -103,6 +104,7 @@ public class InfixToPrefix {
                 while (!stack.empty() && !stack.peek().equals(")")) {
                     out.add(stack.pop());
                 }
+                if (!stack.isEmpty())
                 stack.pop();
 
             } else if (token.equals(")")) {
